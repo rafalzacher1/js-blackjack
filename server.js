@@ -14,7 +14,7 @@ app.use('/scripts', express.static('scripts'));
 app.use('/cards', express.static('cards'));
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'interface.html'));
+    res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 app.listen(port, () => {
