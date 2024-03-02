@@ -68,6 +68,18 @@
             </div>
         </div>
 
+        <script>
+            if ('caches' in window) {
+            // Cache API is supported
+            console.log("True");
+            
+            //You can add your code here
+            } else {
+            // Cache API is not supported
+            console.log("False");
+            }
+        </script>
+
         <script type="application/x-javascript"
             src="./scripts/main.js"></script>
         <script type="application/x-javascript"
