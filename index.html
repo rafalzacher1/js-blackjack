@@ -5,10 +5,9 @@
         <title>Blackjack</title>
 
         <style>
-            body {
+            body, #game {
                 display: flex;
                 flex-direction: column;
-                justify-content: center;
                 align-items: center;
                 min-height: 100vh;
                 margin: 0;
@@ -27,45 +26,69 @@
                 position:absolute;
                 width: 180px;
             }
+
+            #button_container button {
+                width: 100px;
+                height: 40px;
+            }
+
+            #hit_stay {
+                display: none;
+            }
           </style>
     </head>
 
     <body>
         <h1 id="title">Blackjack</h1>
         <h4>By Rafal Zacher</h4>
-        <br>
 
-        <div id="cards" style="height: 250px;">
-            <img id="deck" src="./cards/back.png" style="width: 180px;">
-            <img id="back_card" src="./cards/back.png">
+        <div id="game">
+            <div id="cards" style="height: 250px;">
+                <img id="deck" src="./cards/back.png" style="width: 180px;">
+                <img id="back_card" src="./cards/back.png">
+            </div>
+
+            <div id="player_hand">
+                <img id="card_1" src style="width: 180px;">
+                <img id="card_2" src style="width: 180px;">
+                <img id="card_3" src style="width: 180px;">
+                <img id="card_4" src style="width: 180px;">
+                <img id="card_5" src style="width: 180px;">
+            </div>
+
+            <p id="text-area">Welcome to Blackjack!</p>
+
+            <div id="button_container">
+                <button id="new-game-button">New Game!</button>
+
+                <div id="hit_stay">
+                    <button id="hit-button">Hit!</button>
+                    <button id="stay-button">Stay</button>
+                </div>
+            </div>
         </div>
 
-        <br>
-        <br>
-
-        <div id="player_hand">
-            <img id="card_1" src="" style="width: 180px;">
-            <img id="card_2" src="" style="width: 180px;">
-            <img id="card_3" src="" style="width: 180px;">
-            <img id="card_4" src="" style="width: 180px;">
-            <img id="card_5" src="" style="width: 180px;">
-        </div>
-
-        <p id="text-area">Welcome to Blackjack!</p>
-        <button id="new-game-button">New Game!</button>
-        <button id="hit-button">Hit!</button>
-        <button id="stay-button">Stay</button>
-
-        <script type="application/x-javascript" src="./scripts/main.js"></script>
-        <script type="application/x-javascript" src="./scripts/clear_cards.js"></script>
-        <script type="application/x-javascript" src="./scripts/create_deck.js"></script>
-        <script type="application/x-javascript" src="./scripts/show_status.js"></script>
-        <script type="application/x-javascript" src="./scripts/shuffle_deck.js"></script>
-        <script type="application/x-javascript" src="./scripts/get_next_card.js"></script>
-        <script type="application/x-javascript" src="./scripts/get_card_string.js"></script>
-        <script type="application/x-javascript" src="./scripts/update_scores.js"></script>
-        <script type="application/x-javascript" src="./scripts/get_score.js"></script>
-        <script type="application/x-javascript" src="./scripts/get_card_numeric_value.js"></script>
-        <script type="application/x-javascript" src="./scripts/check_for_end_of_game.js"></script>
+        <script type="application/x-javascript"
+            src="./scripts/main.js"></script>
+        <script type="application/x-javascript"
+            src="./scripts/clear_cards.js"></script>
+        <script type="application/x-javascript"
+            src="./scripts/create_deck.js"></script>
+        <script type="application/x-javascript"
+            src="./scripts/show_status.js"></script>
+        <script type="application/x-javascript"
+            src="./scripts/shuffle_deck.js"></script>
+        <script type="application/x-javascript"
+            src="./scripts/get_next_card.js"></script>
+        <script type="application/x-javascript"
+            src="./scripts/get_card_string.js"></script>
+        <script type="application/x-javascript"
+            src="./scripts/update_scores.js"></script>
+        <script type="application/x-javascript"
+            src="./scripts/get_score.js"></script>
+        <script type="application/x-javascript"
+            src="./scripts/get_card_numeric_value.js"></script>
+        <script type="application/x-javascript"
+            src="./scripts/check_for_end_of_game.js"></script>
     </body>
 </html>

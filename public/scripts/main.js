@@ -12,7 +12,8 @@ let suits = ['hearts', 'clubs', 'diamonds', 'spades'],
 let textArea = document.getElementById('text-area'),
     newGameButton = document.getElementById('new-game-button'),
     hitButton = document.getElementById('hit-button'),
-    stayButton = document.getElementById('stay-button');
+    stayButton = document.getElementById('stay-button'),
+    hitStay = document.getElementById('hit_stay');
 
 // Game variables
 let gameStarted = false,
@@ -54,6 +55,7 @@ newGameButton.addEventListener('click', function () {
 
     // The styles are changed when the game starts
     newGameButton.style.display = 'none';
+    hitStay.style.display = 'inline';
     hitButton.style.display = 'inline';
     stayButton.style.display = 'inline';
     show_status();
