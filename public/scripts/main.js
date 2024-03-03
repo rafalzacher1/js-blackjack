@@ -76,7 +76,7 @@ newGameButton.addEventListener('click', function () {
 
     // Deck of cards are created for the dealer and the player
     deck = create_deck();
-    shuffle_deck(deck);
+    shuffle_deck(deck, deck.length);
     dealerCards = [get_next_card(), get_next_card()];
     playerCards = [get_next_card(), get_next_card()];
 
