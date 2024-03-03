@@ -24,9 +24,19 @@ if ('caches' in window) {
         // Failed to open cache.
     });
 
+    // You can add your code here.
+    let cards = [];
+
+    for (let i = 0; i < suits.length; i++) {
+        for (let j = 0; j < values.length; j++) {
+            let card_url = "/cards/" + values[j] + "-" + suits[i] + ".png";
+            cards.push(card_url);
+        }
+    }
+
     caches.open("cards-cache").then((cache) => {
         cache
-            .addAll(create_deck())
+            .addAll(cards)
             .then(() => console.log("Data added to cache."))
             .catch((error) => console.error("Error adding data to cache:", error));
     });
