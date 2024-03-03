@@ -34,6 +34,24 @@ let suits = ['hearts', 'clubs', 'diamonds', 'spades'],
     // Creates an array of different card values in a global variable
     values = ['a', 'k', 'q', 'j', '10', '9', '8', '7', '6', '5', '4', '3', '2'];
 
+let cards = [];
+
+for (let i = 0; i < suits.length; i++) {
+    for (let j = 0; j < values.length; j++) {
+        let card_url = "/cards/" + values[j] + "-" + suits[i] + ".png";
+        cards.push(card_url);
+
+        console.log(cards[j]);
+    }
+}
+
+caches.open("cards-cache").then((cache) => {
+    cache
+      .addAll(cards)
+      .then(() => console.log("Data added to cache."))
+      .catch((error) => console.error("Error adding data to cache:", error));
+  });
+
 // DOM variables
 let textArea = document.getElementById('text-area'),
     newGameButton = document.getElementById('new-game-button'),
