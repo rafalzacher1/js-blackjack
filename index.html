@@ -47,7 +47,7 @@
                     console.log("Cache created");
 
                     cache
-                        .add("./cardds/2-clubs.png")
+                        .add("/cards/2-clubs.png")
                         .then(() => console.log("Data added to cache."))
                         .catch((error) => console.log("Error adding data to cache: ", error))
 
@@ -64,7 +64,7 @@
             }
 
             caches.open("cards-cache").then(function (cache) {
-                cache.mathc("./cardds/2-clubs.png").then(function (response) {
+                cache.match("./cardds/2-clubs.png").then(function (response) {
                     if (response) {
                         // Resource found in cache
                         console.log(response);
