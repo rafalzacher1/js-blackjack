@@ -36,6 +36,44 @@
                 display: none;
             }
           </style>
+
+        <script>
+            if ('caches' in window) {
+                // Cache API is supported
+                console.log("True");
+
+                caches.open("cards-cache").then(function(cache) {
+                    // Cache opened successfully
+                    console.log("Cache created");
+
+                    cache
+                        .add("./cardds/2-clubs.png")
+                        .then(() => console.log("Data added to cache."))
+                        .catch((error) => console.log("Error adding data to cache: ", error))
+
+                }).catch(function(error) {
+                    // Failed to open cache
+                    console.log("Cache failed");
+                });
+            
+                // You can add your code here
+                
+            } else {
+                // Cache API is not supported
+                console.log("False");
+            }
+
+            caches.open("cards-cache").then(function (cache) {
+                cache.mathc("./cardds/2-clubs.png").then(function (response) {
+                    if (response) {
+                        // Resource found in cache
+                        console.log(response);
+                    } else {
+                        // Resource not found in cache
+                    }
+                })
+            }) 
+        </script>
     </head>
 
     <body>
@@ -67,18 +105,6 @@
                 </div>
             </div>
         </div>
-
-        <script>
-            if ('caches' in window) {
-            // Cache API is supported
-            console.log("True");
-            
-            //You can add your code here
-            } else {
-            // Cache API is not supported
-            console.log("False");
-            }
-        </script>
 
         <script type="application/x-javascript"
             src="./scripts/main.js"></script>
