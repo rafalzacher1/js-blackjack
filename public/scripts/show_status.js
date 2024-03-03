@@ -1,3 +1,6 @@
+let cardsDir = "/cards/";
+let cardExtension = ".png";
+
 // A function is created to display the status of the game
 function show_status() {
     // Text is displayed when the game is not started

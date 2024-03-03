@@ -217,8 +217,8 @@ stayButton.addEventListener('click', function () {
 //     };
 // };
 
-let cardsDir = "./cards/";
-let cardExtension = ".png";
+// let cardsDir = "./cards/";
+// let cardExtension = ".png";
 
 // // A function is created to display the status of the game
 // function showStatus() {
