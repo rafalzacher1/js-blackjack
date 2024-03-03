@@ -11,7 +11,6 @@ let suits = ['hearts', 'clubs', 'diamonds', 'spades'],
 // Initialize storage cache for images. 
 if ('caches' in window) {
     // Cache API is supported.
-    console.log("True");
 
     caches.open("cards-cache").then(function (cache) {
         // Cache opened successfully.
@@ -24,7 +23,6 @@ if ('caches' in window) {
 
     }).catch(function (error) {
         // Failed to open cache.
-        console.log("Cache failed");
     });
 
     // You can add your code here.
@@ -34,8 +32,6 @@ if ('caches' in window) {
         for (let j = 0; j < values.length; j++) {
             let card_url = "/cards/" + values[j] + "-" + suits[i] + ".png";
             cards.push(card_url);
-
-            console.log(cards[j]);
         }
     }
 
@@ -48,7 +44,6 @@ if ('caches' in window) {
 
 } else {
     // Cache API is not supported.
-    console.log("False");
 }
 
 // DOM variables
