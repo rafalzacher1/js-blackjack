@@ -47,7 +47,7 @@
                     console.log("Cache created");
 
                     cache
-                        .add("/cards/2-clubs.png")
+                        .add("/cards/back.png")
                         .then(() => console.log("Data added to cache."))
                         .catch((error) => console.log("Error adding data to cache: ", error))
 
@@ -62,12 +62,15 @@
                 // Cache API is not supported
                 console.log("False");
             }
+        </script>
 
+        <script>
             caches.open("cards-cache").then(function (cache) {
-                cache.match("./cardds/2-clubs.png").then(function (response) {
+                cache.match("/cards/back.png").then(function (response) {
                     if (response) {
                         // Resource found in cache
-                        console.log(response);
+                        document.getElementById("deck").src = response.url;
+                        console.log(response.url);
                     } else {
                         // Resource not found in cache
                     }
@@ -82,8 +85,8 @@
 
         <div id="game">
             <div id="cards" style="height: 250px;">
-                <img id="deck" src="./cards/back.png" style="width: 180px;">
-                <img id="back_card" src="./cards/back.png">
+                <img id="deck" style="width: 180px;">
+                <!-- <img id="back_card" src="/cards/back.png"> -->
             </div>
 
             <div id="player_hand">
