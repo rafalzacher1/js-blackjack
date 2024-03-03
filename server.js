@@ -10,6 +10,9 @@ app.use(express.static('public'));
 // Serve static files from the 'engine' directory
 app.use('/scripts', express.static('scripts'));
 
+// Serve static files from the styles directory
+app.use('/styles', express.static('styles'));
+
 // Serve static files from the 'cards' directory
 app.use('/cards', express.static('cards'));
 

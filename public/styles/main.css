@@ -1,0 +1,30 @@
+body, #game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+#cards {
+    position: relative;
+    right: 90px;
+}
+
+#deck {
+    position:absolute;
+}
+
+#back_card {
+    position:absolute;
+    width: 180px;
+}
+
+#button_container button {
+    width: 100px;
+    height: 40px;
+}
+
+#hit_stay {
+    display: none;
+}
