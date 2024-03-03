@@ -7,33 +7,6 @@
         <link rel="stylesheet" href="/styles/main.css">
 
         <script>
-            if ('caches' in window) {
-                // Cache API is supported
-                console.log("True");
-
-                caches.open("cards-cache").then(function(cache) {
-                    // Cache opened successfully
-                    console.log("Cache created");
-
-                    cache
-                        .add("/cards/back.png")
-                        .then(() => console.log("Data added to cache."))
-                        .catch((error) => console.log("Error adding data to cache: ", error))
-
-                }).catch(function(error) {
-                    // Failed to open cache
-                    console.log("Cache failed");
-                });
-            
-                // You can add your code here
-                
-            } else {
-                // Cache API is not supported
-                console.log("False");
-            }
-        </script>
-
-        <script>
             caches.open("cards-cache").then(function (cache) {
                 cache.match("/cards/back.png").then(function (response) {
                     if (response) {

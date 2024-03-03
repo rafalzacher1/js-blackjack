@@ -2,6 +2,32 @@
  * Blackjack
  **/
 
+// Initialize storage cache for images. 
+if ('caches' in window) {
+    // Cache API is supported.
+    console.log("True");
+
+    caches.open("cards-cache").then(function(cache) {
+        // Cache opened successfully.
+        console.log("Cache created");
+
+        cache
+            .add("/cards/back.png")
+            .then(() => console.log("Data added to cache."))
+            .catch((error) => console.log("Error adding data to cache: ", error))
+
+    }).catch(function(error) {
+        // Failed to open cache.
+        console.log("Cache failed");
+    });
+
+    // You can add your code here.
+    
+} else {
+    // Cache API is not supported.
+    console.log("False");
+}
+
 // Card variables
 // Creates an array of suits of cards in a global variable
 let suits = ['hearts', 'clubs', 'diamonds', 'spades'],
