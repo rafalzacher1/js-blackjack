@@ -2,12 +2,18 @@
  * Blackjack
  **/
 
+// Card variables
+// Creates an array of suits of cards in a global variable
+let suits = ['hearts', 'clubs', 'diamonds', 'spades'],
+    // Creates an array of different card values in a global variable
+    values = ['a', 'k', 'q', 'j', '10', '9', '8', '7', '6', '5', '4', '3', '2'];
+
 // Initialize storage cache for images. 
 if ('caches' in window) {
     // Cache API is supported.
     console.log("True");
 
-    caches.open("cards-cache").then(function(cache) {
+    caches.open("cards-cache").then(function (cache) {
         // Cache opened successfully.
         console.log("Cache created");
 
@@ -16,41 +22,34 @@ if ('caches' in window) {
             .then(() => console.log("Data added to cache."))
             .catch((error) => console.log("Error adding data to cache: ", error))
 
-    }).catch(function(error) {
+    }).catch(function (error) {
         // Failed to open cache.
         console.log("Cache failed");
     });
 
     // You can add your code here.
-    
+    let cards = [];
+
+    for (let i = 0; i < suits.length; i++) {
+        for (let j = 0; j < values.length; j++) {
+            let card_url = "/cards/" + values[j] + "-" + suits[i] + ".png";
+            cards.push(card_url);
+
+            console.log(cards[j]);
+        }
+    }
+
+    caches.open("cards-cache").then((cache) => {
+        cache
+            .addAll(cards)
+            .then(() => console.log("Data added to cache."))
+            .catch((error) => console.error("Error adding data to cache:", error));
+    });
+
 } else {
     // Cache API is not supported.
     console.log("False");
 }
-
-// Card variables
-// Creates an array of suits of cards in a global variable
-let suits = ['hearts', 'clubs', 'diamonds', 'spades'],
-    // Creates an array of different card values in a global variable
-    values = ['a', 'k', 'q', 'j', '10', '9', '8', '7', '6', '5', '4', '3', '2'];
-
-let cards = [];
-
-for (let i = 0; i < suits.length; i++) {
-    for (let j = 0; j < values.length; j++) {
-        let card_url = "/cards/" + values[j] + "-" + suits[i] + ".png";
-        cards.push(card_url);
-
-        console.log(cards[j]);
-    }
-}
-
-caches.open("cards-cache").then((cache) => {
-    cache
-      .addAll(cards)
-      .then(() => console.log("Data added to cache."))
-      .catch((error) => console.error("Error adding data to cache:", error));
-  });
 
 // DOM variables
 let textArea = document.getElementById('text-area'),
