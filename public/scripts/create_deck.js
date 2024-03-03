@@ -2,6 +2,7 @@
 function create_deck() {
     // Empty array is created
     let deck = [];
+    
     // A loop is created to iterate through both arrays to match the suits with values
     for (let suitIdx = 0; suitIdx < suits.length; suitIdx++) {
         for (let valueIdx = 0; valueIdx < values.length; valueIdx++) {
