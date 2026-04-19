@@ -1,20 +1,28 @@
-# Blackjack
+# js-blackjack
 
-Browser-based Blackjack game with a small Express server for static assets.
+## Description
+
+Browser-based **Blackjack** with a small **Express** server that serves `index.html`, `client.html`, and static assets (cards, scripts, styles).
 
 ## Prerequisites
 
-- [Node.js](https://nodejs.org/) (includes `npm`)
+- **[Node.js](https://nodejs.org/)** (LTS recommended; includes `npm`)
+- Optional: **[pnpm](https://pnpm.io/)** if you use the lockfile (`pnpm-lock.yaml`)
 
-## Setup
-
-Install dependencies:
+## Installation
 
 ```bash
+cd js-blackjack
 npm install
 ```
 
-## Run
+If you use pnpm:
+
+```bash
+pnpm install
+```
+
+## Usage
 
 Start the server:
 
@@ -22,23 +30,23 @@ Start the server:
 node server.js
 ```
 
-The server listens on **port 3000** by default.
+The app listens on **port 3000** by default.
 
-## Open the app
-
-| URL | Description |
-|-----|-------------|
+| URL | Page |
+|-----|------|
 | [http://localhost:3000/](http://localhost:3000/) | Main game (`index.html`) |
 | [http://localhost:3000/player](http://localhost:3000/player) | Player room (`client.html`) |
 
+## Project structure
+
+| Path | Role |
+|------|------|
+| `server.js` | Express app and routes |
+| `index.html`, `client.html` | Pages at project root |
+| `public/` | Static assets: `cards/`, `scripts/`, `styles/` |
+
 ## Stack
 
-- **Backend:** [Express](https://expressjs.com/) (`server.js`)
-- **Frontend:** HTML, CSS, and vanilla JavaScript under `public/`
-
-## Project layout
-
-- `server.js` — Express app and routes
-- `index.html`, `client.html` — pages served from the project root
-- `public/` — styles, scripts, and other static files served at `/`
-# js-blackjack
+- **Runtime:** Node.js  
+- **Server:** [Express](https://expressjs.com/)  
+- **Client:** HTML, CSS, vanilla JavaScript
